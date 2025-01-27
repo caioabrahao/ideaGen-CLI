@@ -1,0 +1,33 @@
+{
+  "name": "ideagen-cli",
+  "version": "1.0.0",
+  "description": "An Idea Generation Command Line Tool",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioabrahao/ideaGen-CLI.git"
+  },
+  "keywords": [
+    "Idea",
+    "Generator"
+  ],
+  "author": "Caio Abrahão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioabrahao/ideaGen-CLI/issues"
+  },
+  "homepage": "https://github.com/caioabrahao/ideaGen-CLI#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "bin": {
+    "promptGemini": "./index.js"
+  }
+}
