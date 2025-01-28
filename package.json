@@ -13,10 +13,13 @@
   },
   "keywords": [
     "Idea",
-    "Generator"
+    "Generator",
+    "CLI",
+    "generative-ai",
+    "gemini"    
   ],
   "author": "Caio Abrahão",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/caioabrahao/ideaGen-CLI/issues"
   },
@@ -26,7 +29,8 @@
     "chalk": "^5.4.1",
     "commander": "^13.1.0",
     "dotenv": "^16.4.7",
-    "inquirer": "^12.3.2"
+    "inquirer": "^12.3.2",
+    "ora": "^8.1.1"
   },
   "bin": {
     "genIdea": "./index.js",

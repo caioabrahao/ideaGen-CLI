@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { Command } from 'commander';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import ora from 'ora';
 
 dotenv.config();
 const apiKey = process.env.API_KEY;
@@ -22,10 +23,11 @@ export async function generateIdea(prompt) {
         systemInstruction: "Don't use bold or italics. Keep it short but creative.",
     });
 
-    console.log(chalk.blue('Generating content...'));
+    const spinner = ora(chalk.blue('Generating content...')).start();
     console.log(chalk.bgGreen.bold(`Prompt: ${prompt}\n`));
     const result = await model.generateContent(prompt);
     console.log(chalk.white(result.response.text()));
+    spinner.succeed('Content generated!');
 }
 
 inquirer
