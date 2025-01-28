@@ -35,5 +35,9 @@
   "bin": {
     "genIdea": "./src/index.js",
     "promptGemini": "./src/promptGemini.js"
-  }
+  },
+  "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+}
+
 }
