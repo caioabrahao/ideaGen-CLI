@@ -17,17 +17,23 @@ let skillLevel = "";
 let projectScope = "";
 
 
-export async function generateIdea(prompt) {
+export async function generateIdea(areaOfInterest, skillLevel, projectScope) {
+  const prompt = `Create a brief proposal for a project based on the preferences below. 
+    Be creative and unique!
+    Area of Interest: ${areaOfInterest}
+    Skill Level: ${skillLevel}
+    Project Scope: ${projectScope}`
+
     const model = genAI.getGenerativeModel({
         model: "gemini-1.5-flash",
         systemInstruction: "Don't use bold or italics. Keep it short but creative.",
     });
 
-    const spinner = ora(chalk.blue('Generating content...')).start();
-    console.log(chalk.bgGreen.bold(`Prompt: ${prompt}\n`));
+    const spinner = ora(chalk.blue('Generating content... \n')).start();
+    //console.log(chalk.bgGreen.bold(`Prompt: ${prompt}\n`));
     const result = await model.generateContent(prompt);
     console.log(chalk.white(result.response.text()));
-    spinner.succeed('Content generated!');
+    spinner.succeed('\nContent generated!');
 }
 
 inquirer
@@ -56,12 +62,7 @@ inquirer
     skillLevel = answers.skillLevel;
     projectScope = answers.projectScope;
 
-    const prompt = `Create a brief proposal for a project based on the preferences below. 
-    Be creative and unique!
-    Area of Interest: ${areaOfInterest}
-    Skill Level: ${skillLevel}
-    Project Scope: ${projectScope}`;
-    generateIdea(prompt);
+    generateIdea(areaOfInterest, skillLevel, projectScope);
   })
   .catch((error) => {
     if (error.isTtyError) {

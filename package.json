@@ -2,7 +2,7 @@
   "name": "ideagen-cli",
   "version": "1.0.0",
   "description": "An Idea Generation Command Line Tool",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,7 +33,7 @@
     "ora": "^8.1.1"
   },
   "bin": {
-    "genIdea": "./index.js",
-    "promptGemini": "./promptGemini.js"
+    "genIdea": "./src/index.js",
+    "promptGemini": "./src/promptGemini.js"
   }
 }
